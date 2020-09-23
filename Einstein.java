@@ -1,7 +1,7 @@
 //importing the necessary classes
 import java.util.Scanner;
 import java.lang.Math;
-//import java.util.Random;
+import java.util.Random;
 
 /**
 * This application calculates the amount of energy that could be released.
@@ -23,7 +23,8 @@ public class Einstein {
     int range = (max - min + 1);
     
     //choose a number to return
-    int phraseNum = (int)Math.random() * range + min;
+    int phraseNum = (int)Math.random() * (max - min +1 ) + min;
+    //int phraseNum = rand.nextInt(max);
     
     //return the number generated to the function caller
     return phraseNum;
@@ -34,8 +35,31 @@ public class Einstein {
   public static String SentenceChooser(int randPhraseNum) {
     
     //declare variables
-    int chosenNum;
-    String message = "Test";
+    String randPhrase1 = "Message1";
+    String randPhrase2 = "Message2";
+    String randPhrase3 = "Message3";
+    String randPhrase4 = "Message4";
+    String randPhrase5 = "Message5";
+    String message = "";
+    
+    if (randPhraseNum == 1) {
+      message = randPhrase1;
+    }
+    else if (randPhraseNum == 2) {
+      message = randPhrase2;
+    }
+    else if (randPhraseNum == 3) {
+      message = randPhrase3;
+    }
+    
+    else if (randPhraseNum == 4) {
+      message = randPhrase4;
+    }
+    
+    else if (randPhraseNum == 5) {
+      message = randPhrase5;
+    }
+    
     
     return message;
   }
@@ -63,8 +87,14 @@ public class Einstein {
     int randPhraseNum = SentenceNum();
     System.out.println("phrase number chosen: " + randPhraseNum);
     
+    //send the random number to the sentence chooser
+    String badIdea = SentenceChooser(randPhraseNum);
+    
     //display to the user the amount of energy possible
     System.out.println("If " + mass + "Kg was converted to energy, it would produce " + energy + "J of energy");
+    
+    //tell the user it's a bad idea
+    System.out.println(badIdea);
   }
   
 }
