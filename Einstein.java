@@ -17,7 +17,7 @@ public class Einstein {
   //generate a random number
   
   /**
-   * The style checker tells me I need a javadoc here.
+   * Generate a random number.
   */
   public static int sentenceNum()  {
     
